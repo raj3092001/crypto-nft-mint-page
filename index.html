@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0e0e0e;
+      background-color: #22948c;
       color: white;
       text-align: center;
     }
@@ -22,12 +22,25 @@
       align-items: center;
       padding: 20px;
       box-sizing: border-box;
-      background-color: #0e0e0e;
+      background-color: #227494;
       z-index: 1000;
     }
 
     .left-title {
       font-size: 16px;
+      background-color: #ffffff33;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+      50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+      100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
     }
 
     .center-logo svg {
@@ -43,6 +56,7 @@
       font-size: 14px;
       border-radius: 8px;
       cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     main {
@@ -59,6 +73,7 @@
       width: 300px;
       border-radius: 12px;
       margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     .description {
@@ -75,17 +90,60 @@
       font-size: 18px;
       border-radius: 10px;
       cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
 
     button.mint-btn:hover {
-      background: #45a049;
+      background: #73c779;
+    }
+
+    .price-info {
+      margin-top: 30px;
+      font-size: 16px;
+      white-space: pre-line;
+    }
+
+    @keyframes slideInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .social-icons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+      animation: slideInUp 1s ease-out;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <div class="left-title">my crypto mega mint page</div>
+    <div class="left-title">Crypto Mega</div>
 
     <div class="center-logo">
       <!-- Ethereum Logo SVG -->
@@ -97,13 +155,31 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
     <img src="nft.jpg" alt="NFT Image">
     <div class="description">
       This is an exclusive Crypto Mega NFT drop. Only a few will ever exist. Mint yours now!
     </div>
     <button class="mint-btn">MINT</button>
+    <div class="price-info">
+      Mint 1 Unit = 0.00777<br>
+      Mint 10 Units = 0.0777
+    </div>
   </main>
+
+  <!-- SOCIAL ICONS -->
+  <div class="social-icons">
+    <a href="https://x.com/PratikSharma" target="_blank" title="Twitter (X)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023.svg" alt="X" />
+    </a>
+    <a href="https://t.me/Noob_Pratik" target="_blank" title="Telegram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" />
+    </a>
+    <a href="https://discord.com/invite/pratiksharma" target="_blank" title="Discord">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord" />
+    </a>
+  </div>
 
 </body>
 </html>
